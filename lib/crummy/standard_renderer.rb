@@ -161,12 +161,16 @@ module Crummy
         content_tag(:li, html_options) do
           content_tag(:i,'',class: "fa fa-home") +
           html_content +
-          (content_tag(:i, class: "fa fa-angle-right") unless is_last)
+          (content_tag(:i, '', class: "fa fa-angle-right") unless is_last)
         end
 
       else
-        content_tag(:li, html_content, html_options) + (/<\/li/ =~ separator ? 
-                                        separator : content_tag(:li, separator) unless separator.blank? || is_last)
+
+        content_tag(:li, html_options) do
+          html_content +
+          (content_tag(:i, '', class: "fa fa-angle-right") unless is_last)
+        end
+
       end
 
 
