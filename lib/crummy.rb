@@ -34,7 +34,7 @@ module Crummy
       @html_right_separator = " &raquo; ".html_safe
       @xml_separator = "crumb"
       @xml_right_separator = "crumb"
-      @html_list_separator = " <i class='fa fa-angle-right'></i> ".html_safe
+      @html_list_separator = ''
       @html_list_right_separator = ''
       @skip_if_blank = true
       @links = true
