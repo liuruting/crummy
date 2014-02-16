@@ -161,7 +161,7 @@ module Crummy
         content_tag(:li) do
           content_tag(:i,'',class: "fa fa-home") +
           html_content +
-          content_tag(:li, separator) unless separator.blank? || is_last
+          (content_tag(:li, separator) unless separator.blank? || is_last)
         end
 
       else
