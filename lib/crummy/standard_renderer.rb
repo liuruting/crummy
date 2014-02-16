@@ -155,8 +155,21 @@ module Crummy
       else
         html_content = can_link ? link_to((truncate.present? ? name.truncate(truncate) : name), url, options[:link_html_options]) : content_tag(:span, (truncate.present? ? name.truncate(truncate) : name))
       end
-      content_tag(:li, (content_tag(:i,'',class: "fa fa-home") unless !is_first) + html_content, html_options) + (/<\/li/ =~ separator ? 
+
+      if is_first
+
+        content_tag(:li, :class => '') do
+          content_tag(:i,'',class: "fa fa-home") +
+          html_content + 
+          html_options
+        end
+
+      else
+        content_tag(:li, html_content, html_options) + (/<\/li/ =~ separator ? 
                                         separator : content_tag(:li, separator) unless separator.blank? || is_last)
+      end
+
+
     end
 
     def crumb_to_xml(crumb, links, separator, is_first, is_last)
