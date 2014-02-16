@@ -160,7 +160,7 @@ module Crummy
       if is_first
 
         content_tag(:li, html_content, html_options) do
-          content_tag(:i,'',class: "fa fa-home") +
+          content_tag(:i,'',class: "fa fa-home")
         end
 
       else
