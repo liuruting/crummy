@@ -140,6 +140,7 @@ module Crummy
       can_link = url && links && (!is_last || last_crumb_linked) && !(/<\/a/ =~ name)
       html_classes = []
       html_classes << first_class if is_first && !first_class.empty?
+      html_classes << "<i class='fa fa-home'></i>".html_safe if is_first
       html_classes << last_class if is_last && !last_class.empty?
       html_classes << li_class unless li_class.empty?
       html_options = html_classes.size > 0 ? {:class => html_classes.join(' ').strip} : {}
