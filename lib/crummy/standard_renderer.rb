@@ -158,10 +158,10 @@ module Crummy
 
       if is_first
 
-        content_tag(:li) do
+        content_tag(:li, html_options) do
           content_tag(:i,'',class: "fa fa-home") +
-           html_content + 
-           html_options
+          html_content +
+          content_tag(:li, separator) unless separator.blank? || is_last
         end
 
       else
