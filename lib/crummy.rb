@@ -30,7 +30,7 @@ module Crummy
 
     def initialize
       @format = :html
-      @html_separator = " <i class="fa fa-angle-right"></i> ".html_safe
+      @html_separator = " <i class='fa fa-angle-right'></i> ".html_safe
       @html_right_separator = " &raquo; ".html_safe
       @xml_separator = "crumb"
       @xml_right_separator = "crumb"
